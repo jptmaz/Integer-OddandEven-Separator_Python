@@ -9,9 +9,17 @@ print(sys.path)
 
 with open("C:/Users/HomePC/OOP_SourceCode/OddandEven/numbers.txt") as int_file:
     integers = int_file.readlines()
-    print (integers)
-
+    
 # Then create two text files, one for even numbers, the other one for odd numbers.
-# Identify the numbers if they are odd or even
-    # If the number is even, write to the even numbers text file
-    # If the number is odd, write to the odd numbers text file.
+with open("C:/Users/HomePC/OOP_SourceCode/OddandEven/even.txt", "w") as output_even, open("C:/Users/HomePC/OOP_SourceCode/OddandEven/odd.txt", "w") as output_odd:
+    for line in integers:
+        int_line = int(line)
+        
+        # Identify the numbers if they are odd or even
+        # # If the number is even, write to the even numbers text file
+        
+        if int_line %2 == 0:
+            output_even.write(str(int_line) + "\n")
+        # # If the number is odd, write to the odd numbers text file.
+        else:
+            output_odd.write(str(int_line) + "\n")
